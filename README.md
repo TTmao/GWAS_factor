@@ -1,5 +1,3 @@
 # GWAS_factor
 
-A [workflowr][] project.
-
-[workflowr]: https://github.com/jdblischak/workflowr
+"GWAS PC annotation" analysis achieved by [FUMA](https://fuma.ctglab.nl/)
