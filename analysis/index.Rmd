@@ -5,6 +5,7 @@ date: "9/14/2021"
 output:
   workflowr::wflow_html:
     toc: false
+site: workflowr::wflow_site
 editor_options:
   chunk_output_type: console
 ---
