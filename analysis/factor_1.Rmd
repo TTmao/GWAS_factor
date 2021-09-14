@@ -1,0 +1,13 @@
+---
+title: "Factor 1"
+author: "Chenwei"
+date: "2021-09-14"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+### Manhattan Plot (GWAS summary statistics)
+
+![](pics/manhattan_FUMA_jobs144954.png)
+
