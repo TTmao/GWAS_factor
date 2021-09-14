@@ -9,9 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Chenwei Tang" />
 
 
-<title>Home</title>
+<title>GWAS PC annotation</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -280,14 +281,16 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Home</h1>
+<h1 class="title toc-ignore">GWAS PC annotation</h1>
+<h4 class="author">Chenwei Tang</h4>
+<h4 class="date">9/14/2021</h4>
 
 </div>
 
 
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
-<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
+<span class="glyphicon glyphicon-list" aria-hidden="true"></span> workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span>
 </button>
 </p>
 <div id="workflowr-report" class="collapse">
@@ -296,7 +299,7 @@ $(document).ready(function () {
 <a data-toggle="tab" href="#summary">Summary</a>
 </li>
 <li>
-<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> </a>
+<a data-toggle="tab" href="#checks"> Checks <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -308,7 +311,7 @@ $(document).ready(function () {
 <strong>Last updated:</strong> 2021-09-14
 </p>
 <p>
-<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 2 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
+<strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 1 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>GWAS_factor/</code> <span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="This is the local directory in which the code in this file was executed."> </span>
@@ -324,34 +327,39 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges"> <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate" class="panel-collapse collapse">
+<div id="strongRMarkdownfilestronguncommittedchanges" class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git repository, you know the exact version of the code that produced these results.</p>
+<p>The R Markdown file has unstaged changes. To know which version of the R Markdown file created these results, you’ll want to first commit it to the Git repo. If you’re still working on the analysis, you can ignore this warning. When you’re finished, you can run <code>wflow_publish</code> to commit the R Markdown file and build the HTML.</p>
 </div>
 </div>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomTTmaoGWASfactortreeaeb1c39c92d163b1e8486371430429814330b3a2targetblankaeb1c39a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/TTmao/GWAS_factor/tree/aeb1c39c92d163b1e8486371430429814330b3a2" target="_blank">aeb1c39</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomTTmaoGWASfactortree8bd298dec03359ef9ffd0b5ce8fe1ac7cafe6546targetblank8bd298da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/TTmao/GWAS_factor/tree/8bd298dec03359ef9ffd0b5ce8fe1ac7cafe6546" target="_blank">8bd298d</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomTTmaoGWASfactortreeaeb1c39c92d163b1e8486371430429814330b3a2targetblankaeb1c39a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomTTmaoGWASfactortree8bd298dec03359ef9ffd0b5ce8fe1ac7cafe6546targetblank8bd298da" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/TTmao/GWAS_factor/tree/aeb1c39c92d163b1e8486371430429814330b3a2" target="_blank">aeb1c39</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/TTmao/GWAS_factor/tree/8bd298dec03359ef9ffd0b5ce8fe1ac7cafe6546" target="_blank">8bd298d</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-working directory clean
+Untracked files:
+    Untracked:  analysis/factor_1.Rmd
+
+Unstaged changes:
+    Modified:   analysis/index.Rmd
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
@@ -391,6 +399,23 @@ Message
 <tbody>
 <tr>
 <td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/29c94ee8ea3a078b7e7017cccc42de379f6be7b5/docs/index.html" target="_blank">29c94ee</a>
+</td>
+<td>
+TTmao
+</td>
+<td>
+2021-09-14
+</td>
+<td>
+Build site.
+</td>
+</tr>
+<tr>
+<td>
 Rmd
 </td>
 <td>
@@ -413,7 +438,48 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<p>Welcome to my research website.</p>
+<div id="data-and-preprocessing" class="section level2">
+<h2>Data and preprocessing</h2>
+<ol style="list-style-type: decimal">
+<li><p>The original GWAS data is obtained from <a href="https://www.nature.com/articles/ncomms11122">Kettunen, J., Demirkan, A., Würtz, P. et al.</a>. (<strong>N = 24925</strong>).</p></li>
+<li><p>Then the data is applied with GFA as described in <a href="https://www.sugarsync.com/pf/D7756315_09926538_686664">Morrison, J. et al. </a>. The first three factors can be obtained from</p></li>
+</ol>
+<pre><code>/project2/xinhe/jean/gwas_factors/data_analysis/2021-03-25_paper_metabolites/results/2021-03-25-metonly_estL2_z_ff-1_maxmiss0_pthresh1_seed1_subInf.*gc.RDS
+</code></pre>
+<p>Where * can be 1,2,3.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>In order not to confuse FUMA of which p value to use, delete the p column, and rename p_corr as p.</li>
+</ol>
+<pre><code># R dataset imported as f
+library(dplyr)
+f$p &lt;- NULL
+f &lt;- rename(f,p = p_corr)
+</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Three lists of corresponding top SNPs after clumping with plink with threshold <strong>p &lt; 5e-8</strong> can be obtained from</li>
+</ol>
+<pre><code>/project2/xinhe/jean/gwas_factors/data_analysis/2021-03-25_paper_metabolites/f*_top_vars.RDS</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Since FUMA only recognizes input files as plain texts with tab as delimiters, all these .RDS files must be written as .tsv tables after loading into RStudio:</li>
+</ol>
+<pre><code>write.table(f, file = &#39;f.tsv&#39;, quote = FALSE, sep = &#39;\t&#39;, col.name = NA)
+</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Gzip the GWAS data because of the 600Mb limit.</li>
+</ol>
+</div>
+<div id="run-fuma" class="section level2">
+<h2>Run <a href="https://fuma.ctglab.nl/">FUMA</a></h2>
+<ul>
+<li>Go for SNP2GENE</li>
+<li>Upload zipped GWAS TSV file for each factor and its corresponding top SNPs list.</li>
+<li>Type in sample size N. All other parameters are default. Then submit job.</li>
+</ul>
+</div>
+<div id="results" class="section level2">
+<h2>Results</h2>
+<p><em><a href="factor_1.html">Factor 1</a> </em>[Factor 2] *[Factor 3]</p>
+</div>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using

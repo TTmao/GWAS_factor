@@ -1,6 +1,7 @@
 ---
-title: "Home"
-site: workflowr::wflow_site
+title: "GWAS PC annotation"
+author: "Chenwei Tang"
+date: "9/14/2021"
 output:
   workflowr::wflow_html:
     toc: false
@@ -8,4 +9,49 @@ editor_options:
   chunk_output_type: console
 ---
 
-Welcome to my research website.
+## Data and preprocessing
+
+1. The original GWAS data is obtained from [Kettunen, J., Demirkan, A., Würtz, P. et al.](https://www.nature.com/articles/ncomms11122). (**N = 24925**).
+
+2. Then the data is applied with GFA as described in [Morrison, J. et al. ](https://www.sugarsync.com/pf/D7756315_09926538_686664). The first three factors can be obtained from
+
+```
+/project2/xinhe/jean/gwas_factors/data_analysis/2021-03-25_paper_metabolites/results/2021-03-25-metonly_estL2_z_ff-1_maxmiss0_pthresh1_seed1_subInf.*gc.RDS
+
+```
+
+ Where * can be 1,2,3.
+ 
+3. In order not to confuse FUMA of which p value to use, delete the p column, and rename p_corr as p.
+```
+# R dataset imported as f
+library(dplyr)
+f$p <- NULL
+f <- rename(f,p = p_corr)
+
+```
+
+4. Three lists of corresponding top SNPs after clumping with plink with threshold **p < 5e-8** can be obtained from
+
+```
+/project2/xinhe/jean/gwas_factors/data_analysis/2021-03-25_paper_metabolites/f*_top_vars.RDS
+```
+
+5. Since FUMA only recognizes input files as plain texts with tab as delimiters, all these .RDS files must be written as .tsv tables after loading into RStudio:
+
+```
+write.table(f, file = 'f.tsv', quote = FALSE, sep = '\t', col.name = NA)
+
+```
+6. Gzip the GWAS data because of the 600Mb limit.
+
+## Run [FUMA](https://fuma.ctglab.nl/)
+
+* Go for SNP2GENE
+* Upload zipped GWAS TSV file for each factor and its corresponding top SNPs list.
+* Type in sample size N. All other parameters are default. Then submit job.
+
+## Results
+*[Factor 1](factor_1.html)
+*[Factor 2]
+*[Factor 3]
