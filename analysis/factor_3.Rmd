@@ -1,0 +1,63 @@
+---
+title: "factor_3"
+author: "Chenwei Tang"
+date: "2021-09-15"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## SNP2GENE
+
+Result files at
+```
+/project2/xinhe/shared_data/gwas_factor/results/f3_snp2gene.zip
+```
+
+### Manhattan Plot (GWAS summary statistics)
+
+![](pics/f3/manhattan_FUMA_jobs144985.png)
+
+### Mahattan Plot (gene-based test)
+
+Input SNPs were mapped to 17267 protein coding genes. Genome wide significance (red dashed line in the plot) was defined at P = 0.05/17267 = 2.896e-6. Top 32 genes are labeled:
+
+![](pics/f3/geneManhattan_FUMA_jobs144985.png)
+
+### QQ plot (GWAS summary statisics)
+
+![](pics/f3/QQplot_FUMA_jobs144985.png)
+
+### QQ plot (gene-based test)
+
+![](pics/f3/geneQQplot_FUMA_jobs144985.png)
+
+### MAGMA Tissue Expression Analysis
+
+![](pics/f3/magma_exp_gtex_v8_ts_general_avg_log2TPM_FUMA_jobs144985.png)
+
+![](pics/f3/magma_exp_gtex_v8_ts_avg_log2TPM_FUMA_jobs144985.png)
+
+
+## GENE2FUNC
+
+Result files at
+```
+/project2/xinhe/shared_data/gwas_factor/results/f3_gene2func.zip
+```
+
+### Gene expression heatmap
+
+![](pics/f3/expHeat_FUMA_gene2func.png)
+
+### GTEx v8 54 tissue types
+
+![](pics/f3/gtex_v8_ts_FUMA_gene2func65681.png)
+
+### GTEx v8 30 general tissue types
+
+![](pics/f3/gtex_v8_ts_general_FUMA_gene2func65681.png)
+
+### Gene set enrichment
+
+![](pics/f3/GWAScatalog_FUMA_gene2func65681.png)
