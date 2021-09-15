@@ -7,32 +7,45 @@ editor_options:
   chunk_output_type: console
 ---
 
+## SNP2GENE
+
 Result files at
 ```
-/project2/xinhe/shared_data/gwas_factor/results/f1_results.zip
+/project2/xinhe/shared_data/gwas_factor/results/f1_snp2gene.zip
 ```
 
 ### Manhattan Plot (GWAS summary statistics)
 
-![](pics/manhattan_FUMA_jobs144954.png)
+![](pics/f1/manhattan_FUMA_jobs144954.png)
 
 ### Mahattan Plot (gene-based test)
 
 Input SNPs were mapped to 17267 protein coding genes. Genome wide significance (red dashed line in the plot) was defined at P = 0.05/17267 = 2.896e-6. Top 32 genes are labeled:
 
-![](pics/geneManhattan_FUMA_jobs144954.png)
+![](pics/f1/geneManhattan_FUMA_jobs144954.png)
 
 ### QQ plot (GWAS summary statisics)
 
-![](pics/QQplot_FUMA_jobs144954.png)
+![](pics/f1/QQplot_FUMA_jobs144954.png)
 
 ### QQ plot (gene-based test)
 
-![](pics/geneQQplot_FUMA_jobs144954.png)
+![](pics/f1/geneQQplot_FUMA_jobs144954.png)
 
 ### MAGMA Tissue Expression Analysis
 
-![](pics/magma_exp_gtex_v8_ts_general_avg_log2TPM_FUMA_jobs144954.png)
+![](pics/f1/magma_exp_gtex_v8_ts_general_avg_log2TPM_FUMA_jobs144954.png)
 
-![](pics/magma_exp_gtex_v8_ts_avg_log2TPM_FUMA_jobs144954.png)
+![](pics/f1/magma_exp_gtex_v8_ts_avg_log2TPM_FUMA_jobs144954.png)
 
+
+## GENE2FUNC
+
+Result files at
+```
+/project2/xinhe/shared_data/gwas_factor/results/f1_gene2func.zip
+```
+
+### Gene expression heatmap
+
+![](pics/f1/expHeat_FUMA_gene2func.png)
