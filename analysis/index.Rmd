@@ -53,6 +53,6 @@ write.table(f, file = 'f.tsv', quote = FALSE, sep = '\t', col.name = NA)
 * Type in sample size N. All other parameters are default. Then submit job.
 
 ## Results
-*[Factor 1](factor_1.html)
-*[Factor 2](factor_2.html)
-*[Factor 3](factor_3.html)
+* [Factor 1](factor_1.html)
+* [Factor 2](factor_2.html)
+* [Factor 3](factor_3.html)
