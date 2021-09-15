@@ -54,5 +54,5 @@ write.table(f, file = 'f.tsv', quote = FALSE, sep = '\t', col.name = NA)
 
 ## Results
 *[Factor 1](factor_1.html)
-*[Factor 2]
-*[Factor 3]
+*[Factor 2](factor_2.html)
+*[Factor 3](factor_3.html)
