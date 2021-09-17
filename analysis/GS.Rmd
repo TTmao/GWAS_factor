@@ -1,0 +1,50 @@
+---
+title: "Gene set enrichment"
+author: "Chenwei Tang"
+date: "2021-09-17"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+* Download Gene set enrichment results for 3 factors from FUMA:
+
+```
+/project2/xinhe/shared_data/gwas_factor/GS/*.txt
+
+```
+
+* Only keep GO biological process results
+
+```
+df.list = list(f1,f2,f3)
+res <- lapply(df.list,function(x) x[x$Category == 'GO_bp',])
+res <- lapply(res,function(x) cbind(x,enrichment = x$N_overlap/x$N_genes))
+res <- lapply(res,function(x) x[c('GeneSet','enrichment')])
+```
+
+* Calculate enrichment proportions and only keep it as well as geneset name columns
+
+```
+res <- lapply(res,function(x) cbind(x,enrichment = x$N_overlap/x$N_genes))
+res <- lapply(res,function(x) x[c('GeneSet','enrichment')])
+```
+
+* Merge data frames according to gene set names
+
+```
+f = merge(merge(res[1],res[2],by='GeneSet'),res[3],by='GeneSet')
+
+library(dplyr)
+final = rename(f,f1_enrichment = enrichment.x,f2_enrichment = enrichment.y,f3_enrichment = enrichment)
+```
+
+* Calculate maximum differences and sort
+```
+final$max_diff = apply(final[,-1],1,max)-apply(final[,-1],1,min)
+final <- final[order(-final$max_diff),]
+```
+
+Result:
+![](pics/GS.png)
+[TABLE](GS_max_diff.csv)
