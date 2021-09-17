@@ -60,4 +60,4 @@ Result files at
 
 ### Gene set enrichment
 
-![](pics/f3/GWAScatalog_FUMA_gene2func65681.png)
+![](pics/f3/GO_bp_FUMA_gene2func65796.png)

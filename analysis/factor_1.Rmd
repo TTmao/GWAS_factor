@@ -1,6 +1,6 @@
 ---
 title: "Factor 1"
-author: "Chenwei"
+author: "Chenwei Tang"
 date: "2021-09-14"
 output: workflowr::wflow_html
 editor_options:
@@ -60,4 +60,4 @@ Result files at
 
 ### Gene set enrichment
 
-![](pics/f1/GWAScatalog_FUMA_gene2func65568.png)
+![](pics/f1/GO_bp_FUMA_gene2func65741.png)
