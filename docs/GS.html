@@ -11,8 +11,9 @@
 
 <meta name="author" content="Chenwei Tang" />
 
+<meta name="date" content="2021-09-17" />
 
-<title>GWAS PC annotation</title>
+<title>Gene set enrichment</title>
 
 <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -30,6 +31,9 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -231,6 +235,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -238,6 +305,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -281,9 +358,9 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">GWAS PC annotation</h1>
+<h1 class="title toc-ignore">Gene set enrichment</h1>
 <h4 class="author">Chenwei Tang</h4>
-<h4 class="date">9/14/2021</h4>
+<h4 class="date">2021-09-17</h4>
 
 </div>
 
@@ -373,7 +450,7 @@ Note that any generated files, e.g. HTML, png, CSS, etc., are not included in t
 <div id="versions" class="tab-pane fade">
 
 <p>
-These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/index.Rmd</code>) and HTML (<code>docs/index.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
+These are the previous versions of the repository in which changes were made to the R Markdown (<code>analysis/GS.Rmd</code>) and HTML (<code>docs/GS.html</code>) files. If you’ve configured a remote Git repository (see <code>?wflow_git_remote</code>), click on the hyperlinks in the table below to view the files as they were in that past version.
 </p>
 <div class="table-responsive">
 <table class="table table-condensed table-hover">
@@ -402,7 +479,7 @@ Message
 Rmd
 </td>
 <td>
-<a href="https://github.com/TTmao/GWAS_factor/blob/221ca8cdc1b907edd8a669a52b941d12ee1fa66e/analysis/index.Rmd" target="_blank">221ca8c</a>
+<a href="https://github.com/TTmao/GWAS_factor/blob/221ca8cdc1b907edd8a669a52b941d12ee1fa66e/analysis/GS.Rmd" target="_blank">221ca8c</a>
 </td>
 <td>
 TTmao
@@ -414,193 +491,6 @@ TTmao
 wflow_publish(c(“analysis/index.Rmd”, “analysis/GS.Rmd”))
 </td>
 </tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/1c6a9b6ff09ac1291f0b445b7ec7ed7cabb119a7/docs/index.html" target="_blank">1c6a9b6</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-15
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TTmao/GWAS_factor/blob/8f814bed2a01d60855b246f901a54fc6c5ab81ad/analysis/index.Rmd" target="_blank">8f814be</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-15
-</td>
-<td>
-wflow_publish(“analysis/index.Rmd”)
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/342667c6bb203741ff37c3d22e2fe8cc4ee70772/docs/index.html" target="_blank">342667c</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-15
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TTmao/GWAS_factor/blob/fe89d189ab1092a54631c532e7a91dc0e1350597/analysis/index.Rmd" target="_blank">fe89d18</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-15
-</td>
-<td>
-wflow_publish(“analysis/index.Rmd”)
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/fef3d547bdc63025a6bbd28c31c4fc823541979a/docs/index.html" target="_blank">fef3d54</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TTmao/GWAS_factor/blob/16ba10438decd93ccb651f1c96c377bd76abe6b8/analysis/index.Rmd" target="_blank">16ba104</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-wflow_git_commit(files = “analysis/index.Rmd”)
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/1b44b0c6d79a68d885516c1b6715badadb4ade90/docs/index.html" target="_blank">1b44b0c</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TTmao/GWAS_factor/blob/ba9110769e929358abd64a52940ac30fe2849ee8/analysis/index.Rmd" target="_blank">ba91107</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-wflow_git_commit(all = TRUE)
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/ba9110769e929358abd64a52940ac30fe2849ee8/docs/index.html" target="_blank">ba91107</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-wflow_git_commit(all = TRUE)
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/TTmao/GWAS_factor/29c94ee8ea3a078b7e7017cccc42de379f6be7b5/docs/index.html" target="_blank">29c94ee</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-Build site.
-</td>
-</tr>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/TTmao/GWAS_factor/blob/2a2adc1d64989a45061c621c4b982e487f0ff658/analysis/index.Rmd" target="_blank">2a2adc1</a>
-</td>
-<td>
-TTmao
-</td>
-<td>
-2021-09-14
-</td>
-<td>
-Start workflowr project.
-</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -608,53 +498,36 @@ Start workflowr project.
 </div>
 </div>
 </div>
-<div id="data-and-preprocessing" class="section level2">
-<h2>Data and preprocessing</h2>
-<ol style="list-style-type: decimal">
-<li><p>The original GWAS data is obtained from <a href="https://www.nature.com/articles/ncomms11122">Kettunen, J., Demirkan, A., Würtz, P. et al.</a>. (<strong>N = 24925</strong>).</p></li>
-<li><p>Then the data is applied with GFA as described in <a href="https://www.sugarsync.com/pf/D7756315_09926538_686664">Morrison, J. et al. </a>. The first three factors can be obtained from</p></li>
-</ol>
-<pre><code>/project2/xinhe/jean/gwas_factors/data_analysis/2021-03-25_paper_metabolites/results/2021-03-25-metonly_estL2_z_ff-1_maxmiss0_pthresh1_seed1_subInf.*gc.RDS
+<ul>
+<li>Download Gene set enrichment results for 3 factors from FUMA:</li>
+</ul>
+<pre><code>/project2/xinhe/shared_data/gwas_factor/GS/*.txt
 </code></pre>
-<p>Where * can be 1,2,3.</p>
-<ol start="3" style="list-style-type: decimal">
-<li>In order not to confuse FUMA of which p value to use, delete the p column, and rename p_corr as p.</li>
-</ol>
-<pre><code># R dataset imported as f
+<ul>
+<li>Only keep GO biological process results</li>
+</ul>
+<pre><code>df.list = list(f1,f2,f3)
+res &lt;- lapply(df.list,function(x) x[x$Category == &#39;GO_bp&#39;,])
+res &lt;- lapply(res,function(x) cbind(x,enrichment = x$N_overlap/x$N_genes))
+res &lt;- lapply(res,function(x) x[c(&#39;GeneSet&#39;,&#39;enrichment&#39;)])</code></pre>
+<ul>
+<li>Calculate enrichment proportions and only keep it as well as geneset name columns</li>
+</ul>
+<pre><code>res &lt;- lapply(res,function(x) cbind(x,enrichment = x$N_overlap/x$N_genes))
+res &lt;- lapply(res,function(x) x[c(&#39;GeneSet&#39;,&#39;enrichment&#39;)])</code></pre>
+<ul>
+<li>Merge data frames according to gene set names</li>
+</ul>
+<pre><code>f = merge(merge(res[1],res[2],by=&#39;GeneSet&#39;),res[3],by=&#39;GeneSet&#39;)
+
 library(dplyr)
-f$p &lt;- NULL
-f &lt;- rename(f,p = p_corr)
-</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Three lists of corresponding top SNPs after clumping with plink with threshold <strong>p &lt; 5e-8</strong> can be obtained from</li>
-</ol>
-<pre><code>/project2/xinhe/jean/gwas_factors/data_analysis/2021-03-25_paper_metabolites/f*_top_vars.RDS</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Since FUMA only recognizes input files as plain texts with tab as delimiters, all these .RDS files must be written as .tsv tables after loading into RStudio:</li>
-</ol>
-<pre><code>write.table(f, file = &#39;f.tsv&#39;, quote = FALSE, sep = &#39;\t&#39;, col.name = NA)
-</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li>Gzip the GWAS data because of the 600Mb limit.</li>
-</ol>
-</div>
-<div id="run-fuma" class="section level2">
-<h2>Run <a href="https://fuma.ctglab.nl/">FUMA</a></h2>
+final = rename(f,f1_enrichment = enrichment.x,f2_enrichment = enrichment.y,f3_enrichment = enrichment)</code></pre>
 <ul>
-<li>Go for SNP2GENE</li>
-<li>Upload zipped GWAS TSV file for each factor and its corresponding top SNPs list.</li>
-<li>Type in sample size N. All other parameters are default. Then submit job.</li>
+<li>Calculate maximum differences and sort</li>
 </ul>
-</div>
-<div id="results" class="section level2">
-<h2>Results</h2>
-<ul>
-<li><a href="factor_1.html">Factor 1</a></li>
-<li><a href="factor_2.html">Factor 2</a></li>
-<li><a href="factor_3.html">Factor 3</a></li>
-<li><a href="GS.html">Gene set analysis</a></li>
-</ul>
-</div>
+<pre><code>final$max_diff = apply(final[,-1],1,max)-apply(final[,-1],1,min)
+final &lt;- final[order(-final$max_diff),]</code></pre>
+<p>Result: <img src="pics/GS.png" /> <a href="GS_max_diff.csv">TABLE</a></p>
 
 
 <!-- Adjust MathJax settings so that all math formulae are shown using
@@ -672,6 +545,8 @@ footer is added to webpages before the MathJax javascript. -->
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -704,6 +579,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
