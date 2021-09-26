@@ -44,4 +44,4 @@ DT::datatable(format(final[,1:4], digits = 2), options = list(scrollX = TRUE, ke
 write.table(final, file="output/MAGMA_genes.merged", row.names=FALSE, sep="\t")
 ```
 
-[Full table]("output/MAGMA.genes.merged)
+[Full table]("output/MAGMA.genes.merged")
