@@ -1,0 +1,45 @@
+---
+title: "MAGMA"
+author: "TTmao"
+date: "2021-09-26"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+* Download MAGMA gene association results from FUMA
+
+```
+/data/MAGMA/*.magma.genes.out
+```
+
+* Read in tables.
+
+```{r}
+library(dplyr)
+library(DT)
+
+factor_list <- c("f1","f2","f3")
+factor_dir <- ("data/MAGMA/")
+for (f in factor_list){
+  assign(f,read.delim(paste0(factor_dir , f , "_" , "magma.genes.out")))
+}
+
+```
+
+* Only keep name and p value columns
+```{r}
+df.list <- list(f1,f2,f3)
+df.list <- lapply(df.list,function(x) x[c('GENE','P','SYMBOL')])
+```
+
+* Merge by gene namesand rename columns
+
+```{r}
+f<- merge(merge(df.list[1],df.list[2],by='GENE'),df.list[3],by='GENE')
+final <- rename(f,f1_P = P.x,f2_P = P.y,f3_P = P)
+final <- subset(final,select=-c(SYMBOL.x,SYMBOL.y))
+
+DT::datatable(format(final[,1:4], digits = 2), options = list(scrollX = TRUE, keys = TRUE),rownames = F)
+write.table(final, file="output/MAGMA_genes.merged", row.names=FALSE, sep="\t")
+```
