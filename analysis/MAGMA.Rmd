@@ -33,7 +33,7 @@ df.list <- list(f1,f2,f3)
 df.list <- lapply(df.list,function(x) x[c('GENE','P','SYMBOL')])
 ```
 
-* Merge by gene namesand rename columns
+* Merge by gene names and rename columns
 
 ```{r}
 f<- merge(merge(df.list[1],df.list[2],by='GENE'),df.list[3],by='GENE')
@@ -44,4 +44,4 @@ DT::datatable(format(final[,1:4], digits = 2), options = list(scrollX = TRUE, ke
 write.table(final, file="output/MAGMA_genes.merged", row.names=FALSE, sep="\t")
 ```
 
-[Full table]("output/MAGMA.genes.merged")
+[Full table](output/MAGMA.genes.merged)
