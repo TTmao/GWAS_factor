@@ -40,7 +40,7 @@ f<- merge(merge(df.list[1],df.list[2],by='GENE'),df.list[3],by='GENE')
 final <- rename(f,f1_P = P.x,f2_P = P.y,f3_P = P)
 final <- subset(final,select=-c(SYMBOL.x,SYMBOL.y))
 
-DT::datatable(format(final[,1:4], digits = 2), options = list(scrollX = TRUE, keys = TRUE),rownames = F)
+DT::datatable(format(final[,1:5], digits = 2), options = list(scrollX = TRUE, keys = TRUE),rownames = F)
 write.table(final, file="output/MAGMA_genes.merged", row.names=FALSE, sep="\t")
 ```
 
